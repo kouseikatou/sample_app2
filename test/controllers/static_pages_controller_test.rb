@@ -15,13 +15,12 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     # GET /static_pages/home
     get static_pages_home_url
     assert_response :success
-    assert_select "title", "Home | #{@base_title}"
+    assert_select "title", "#{@base_title}"
   end
 
   test "should get help" do
     # GET /static_pages/help
     get static_pages_help_url
-
     # assert = 何かか届くはすだ
     assert_response :success
     assert_select "title" , "Help | #{@base_title}"
